@@ -1,6 +1,6 @@
-BOT_TOKEN: str = "OTIxNDUzMzY2MDc5NTIwODA5.YbzIUg.OVDMSc-M4_KuIcvL5oBYVV5M6rY"
-SPOTIFY_ID: str = "gclarobatista"
-SPOTIFY_SECRET: str = "dg.l.goncalo"
+BOT_TOKEN: str = ""
+SPOTIFY_ID: str = ""
+SPOTIFY_SECRET: str = ""
 
 BOT_PREFIX = "!"
 
