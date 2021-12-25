@@ -36,6 +36,6 @@ class Song():
                                 value="{}".format(str(datetime.timedelta(seconds=self.duration))), inline=False)
             else:
                 embed.add_field(name=config.SONGINFO_DURATION,
-                                value=config.SONGINFO_UNKNOWN_DURATION , inline=False)
+                                value=config.SONGINFO_UNKNOWN_DURATION, inline=False)
 
             return embed
