@@ -60,7 +60,8 @@ async def register(guild):
     sett = guild_to_settings[guild]
 
     try:
-        await guild.me.edit(nick=sett.get('default_nickname'))
+        # await guild.me.edit(nick=sett.get('default_nickname'))
+        await guild.me.edit(nick=sett.get('Ti Delfim da Sanfona'))
     except:
         pass
 
