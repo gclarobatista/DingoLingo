@@ -1,6 +1,7 @@
 py-cord
 py-cord[voice]
-yt-dlp
+youtube-dl
+# yt-dlp
 aiohttp
 asyncio
 beautifulsoup4

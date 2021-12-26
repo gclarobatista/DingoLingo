@@ -2,7 +2,7 @@ import asyncio
 import concurrent.futures
 
 import discord
-import yt_dlp
+import youtube_dl
 from config import config
 
 from musicbot import linkutils, utils
@@ -77,7 +77,7 @@ class AudioController(object):
                 conversion = self.search_youtube(await linkutils.convert_spotify(song.info.webpage_url))
                 song.info.webpage_url = conversion
 
-            downloader = yt_dlp.YoutubeDL(
+            downloader = youtube_dl.YoutubeDL(
                 {'format': 'bestaudio', 'title': True, "cookiefile": config.COOKIE_PATH})
             r = downloader.extract_info(
                 song.info.webpage_url, download=False)
@@ -138,7 +138,7 @@ class AudioController(object):
             track = track.split("&list=")[0]
 
         try:
-            downloader = yt_dlp.YoutubeDL(
+            downloader = youtube_dl.YoutubeDL(
                 {'format': 'bestaudio', 'title': True, "cookiefile": config.COOKIE_PATH})
 
             try:
@@ -148,7 +148,7 @@ class AudioController(object):
                 if "ERROR: Sign in to confirm your age" in str(e):
                     return None
         except:
-            downloader = yt_dlp.YoutubeDL(
+            downloader = youtube_dl.YoutubeDL(
                 {'title': True, "cookiefile": config.COOKIE_PATH})
             r = downloader.extract_info(
                 track, download=False)
@@ -186,7 +186,7 @@ class AudioController(object):
                 "cookiefile": config.COOKIE_PATH
             }
 
-            with yt_dlp.YoutubeDL(options) as ydl:
+            with youtube_dl.YoutubeDL(options) as ydl:
                 r = ydl.extract_info(url, download=False)
 
                 for entry in r['entries']:
@@ -211,7 +211,7 @@ class AudioController(object):
                 'format': 'bestaudio/best',
                 'extract_flat': True
             }
-            with yt_dlp.YoutubeDL(options) as ydl:
+            with youtube_dl.YoutubeDL(options) as ydl:
                 r = ydl.extract_info(url, download=False)
 
                 for entry in r['entries']:
@@ -236,7 +236,7 @@ class AudioController(object):
             if song.host == linkutils.Sites.Spotify:
                 song.info.webpage_url = self.search_youtube(song.info.title)
 
-            downloader = yt_dlp.YoutubeDL(
+            downloader = youtube_dl.YoutubeDL(
                 {'format': 'bestaudio', 'title': True, "cookiefile": config.COOKIE_PATH})
             r = downloader.extract_info(
                 song.info.webpage_url, download=False)
@@ -269,7 +269,7 @@ class AudioController(object):
             "cookiefile": config.COOKIE_PATH
         }
 
-        with yt_dlp.YoutubeDL(options) as ydl:
+        with youtube_dl.YoutubeDL(options) as ydl:
             r = ydl.extract_info(title, download=False)
 
         videocode = r['entries'][0]['id']
