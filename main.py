@@ -35,7 +35,9 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print(config.STARTUP_MESSAGE)
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="Music, type {}help".format(config.BOT_PREFIX)))
+    await bot.change_presence(
+        status=discord.Status.online,
+        activity=discord.Game(name=f"A buber ({config.BOT_PREFIX})"))
 
     for guild in bot.guilds:
         await register(guild)
