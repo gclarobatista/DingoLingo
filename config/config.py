@@ -1,8 +1,8 @@
 import os
 
 BOT_TOKEN: str = os.environ.get('BOT_TOKEN')
-SPOTIFY_ID: str = ""
-SPOTIFY_SECRET: str = ""
+SPOTIFY_ID: str = os.environ.get('SPOTIFY_ID')
+SPOTIFY_SECRET: str = os.environ.get('SPOTIFY_SECRET')
 
 BOT_PREFIX = "!"
 
