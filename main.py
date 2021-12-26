@@ -37,7 +37,7 @@ async def on_ready():
     print(config.STARTUP_MESSAGE)
     await bot.change_presence(
         status=discord.Status.online,
-        activity=discord.Game(name=f"A buber ({config.BOT_PREFIX})"))
+        activity=discord.Game(name=f"A buber, {config.BOT_PREFIX}help"))
 
     for guild in bot.guilds:
         await register(guild)
